@@ -8,10 +8,10 @@ body{
 	color: #405367;
 }
 
+
 h1{
 	font-weight: bold;
 	font-size: 8em;
-
 }
 
 .label{
@@ -27,3 +27,5 @@ h1{
 	align-items: center;
 	justify-content: center;
 }
+
+

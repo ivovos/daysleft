@@ -7,8 +7,10 @@
 <body>
 <div id="main">
 	<div class="container">
-		<h1>{{days}}</h1>
-		<div class="label">{{message}}</div>
+	<!-- 	<h1>{{days}}</h1> -->
+		<h1 v-text="days"></h1>
+<!-- 		<h1 v-cloak>{{days}}</h1>
+ -->		<div v-text="message" class="label"></div>
 	</div>
 </body>
 
