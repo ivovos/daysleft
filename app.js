@@ -23,14 +23,3 @@ var app = new Vue({
 
 //console.log(app.daysLeft());
 
-// 1 - get the current date
-
-// 2 - get the date that's the end of my sabbitical (last full day in australia)
-
-// 3 - figure out how many days there are between now and the last date
-
-// 4 - display the amount of days -- should be 46
-
-// 5 - Style the page
-
-// 6 - host so it can be set as landing page
