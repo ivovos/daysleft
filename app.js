@@ -6,44 +6,38 @@ var app = new Vue({
 	el: '#main',
 	data: {
 		message: 'days left',
-		nrDaysLeft: 0,
+		daysLeft: 0,
 		endDate: moment([2017, 2, 2]),
 		startDate: moment([2016,11,30]),
 		totalNrOfDays: 0,
 		counterNr: 0
 	},
 	methods: {
-		daysLeft: function(){
-			this.nrDaysLeft = this.endDate.diff(moment(), 'days');
+		calculateDaysLeft: function(){
+			this.daysLeft = this.endDate.diff(moment(), 'days');
 		},
-		totalDays: function(){
+		calculateTotalDays: function(){
 			this.totalNrOfDays = this.endDate.diff(this.startDate, 'days');
 		},
 		countDown: function(){
 			var count = this.totalNrOfDays;
-			var counter=setInterval(timer, 100); //1000 will  run it every 1 second\
+			var counter=setInterval(timer, 75); //1000 will  run it every 1 second\
 
 			function timer()
 			{
-			  count=count-1;			
-
-			  console.log(app.nrDaysLeft);
-
-			  if (count <= app.nrDaysLeft)
+			  count=count-1;
+			  if (count <= app.daysLeft)
 			  {
 			     clearInterval(counter);
-			     console.log('ready!');
 			     return;
 			  }
-			 // console.log(count);
 			  app.counterNr = count;
-			//  console.log(app.counterNr);
 			}
 		}
 	},
 	created: function(){
-		this.daysLeft();
-		this.totalDays();
+		this.calculateDaysLeft();
+		this.calculateTotalDays();
 		this.countDown();
 	}
 });
