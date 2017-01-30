@@ -2,14 +2,21 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="animate.css">
+
 </head>
 
 <body>
 <div id="main">
 	<div class="container">
 		<div class="card">
-    		<h1 v-text="counterNr"></h1>
- 			<div class="label">of <span v-text="totalNrOfDays"></span> days left</div>
+			<div class="numbers">
+    			<h1 v-text="counterNr"></h1>
+ 				<div class="label">of <span v-text="totalNrOfDays"></span> days left</div>
+				<!--  <li v-for="item in items">
+        		{{ item.name }}  ,{{item.type}} ,{{item.available}}
+        		</li> -->
+        	</div>
 		</div>
 	</div>
 </div>
@@ -17,7 +24,15 @@
 
 <script type='text/javascript' src="js/vue.js"></script>
 <script type='text/javascript' src="js/moment.min.js"></script>
-<script type='text/javascript' src="app.js"></script>
+<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+<!-- <script type='text/javascript' src="js/vuefire.js"></script>
+ -->
+<!-- firebase setup -->
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+
+
+ <script type='text/javascript' src="app.js"></script>
 
 
 </html>

@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+        	"name": "Thing 01",
+        	"available": true,
+            "type": "counter"
+        },
+        {
+        	"name": "Kale",
+        	"available": false,
+            "type": "counter"
+        },
+        {
+        	"name": "Pumpkin",
+        	"available": true,
+            "type": "counter"
+        }
+    ]
+}

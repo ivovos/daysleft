@@ -2,15 +2,28 @@
 
 var endTime, difference;
 
+
+
+var config = {
+  apiKey: "AIzaSyCvviiXfxO1_vBmK90NJ7VPmvc5phbGzAA",
+  authDomain: "daysleft-4a79c.firebaseapp.com",
+  databaseURL: "https://daysleft-4a79c.firebaseio.com"
+}
+
+firebase.initializeApp(config)
+
+
+var itemsRef = firebase.database().ref('items')
+
+
 var app = new Vue({
 	el: '#main',
 	data: {
-		message: 'days left',
 		daysLeft: 0,
 		endDate: moment([2017, 2, 2]),
 		startDate: moment([2016,11,30]),
 		totalNrOfDays: 0,
-		counterNr: 0
+		counterNr: 0,
 	},
 	methods: {
 		calculateDaysLeft: function(){
@@ -18,6 +31,7 @@ var app = new Vue({
 		},
 		calculateTotalDays: function(){
 			this.totalNrOfDays = this.endDate.diff(this.startDate, 'days');
+			return("okay");
 		},
 		countDown: function(){
 			var count = this.totalNrOfDays;
@@ -26,7 +40,7 @@ var app = new Vue({
 			function timer()
 			{
 			  count=count-1;
-			  if (count <= app.daysLeft)
+			  if (count < app.daysLeft)
 			  {
 			     clearInterval(counter);
 			     return;
@@ -34,6 +48,9 @@ var app = new Vue({
 			  app.counterNr = count;
 			}
 		}
+	},
+	firebase: {
+ 		items: itemsRef
 	},
 	created: function(){
 		this.calculateDaysLeft();
@@ -44,15 +61,6 @@ var app = new Vue({
 
 
 
-// Create a way to countdown the days
-
-// take the starting amount of days
-
-// display  the initial amoount of days
-
-// count down a day and display it
-
-// loop until date shown is days left
-
-
-// should it count down from the total nr or from the last number seen?
+// lookup the last number seen
+// count down from the lst number seen to the current day
+// save the new current number to the last number seen
